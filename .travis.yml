@@ -1,0 +1,17 @@
+sudo: required
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: test running containers
+      script:
+        - docker ps 
+
+notifications:
+  email:
+    recipients:
+      - orenard@gmail.com
+    on_success: always
+    on_failure: always
